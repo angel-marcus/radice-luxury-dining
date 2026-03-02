@@ -18,9 +18,10 @@ Live Link: [https://radice-dining.netlify.app](https://radice-dining.netlify.app
 
 
 ### 📊 Performance Verification
-![Lighthouse Score](assets/radice_lighthouse_score.png)
+![Lighthouse Score](images/radice_lighthouse_score.png)
 
 
 ---
 
 *Created by Angel Marcus — Ready for High-End Web Development Inquiries.*
+
