@@ -13,20 +13,40 @@
     <link rel="icon" href="images/favicon.ico" />
     
     <style>
-        :root { --gold: #A67C45; --dark: #121212; --white: #ffffff; --cream: #f8f6f3; --header-height: 80px; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: var(--cream); color: var(--dark); font-family: sans-serif; padding-top: var(--header-height); overflow-x: hidden; }
-        .container { width: 92%; max-width: 1200px; margin: auto; }
-        .hero { position: relative; height: 100vh; display: flex; align-items: center; background: #121212; overflow: hidden; }
-        .hero__bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; opacity: 0.6; }
-        .header { position: fixed; top: 0; width: 100%; height: var(--header-height); background: rgba(248, 246, 243, 0.95); z-index: 1000; }
+    /* 1. ESSENTIAL VARIABLES & RESET */
+    :root { --gold: #A67C45; --dark: #121212; --white: #ffffff; --cream: #f8f6f3; --header-height: 80px; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    /* 2. PREVENT FLASH: Force background and font immediately */
+    html, body { 
+        background-color: var(--cream); 
+        color: var(--dark); 
+        font-family: 'Montserrat', sans-serif; 
+        padding-top: var(--header-height);
+        overflow-x: hidden;
+    }
+
+    /* 3. HERO & HEADER LAYOUT */
+    .container { width: 92%; max-width: 1200px; margin: auto; }
+    .header { 
+        position: fixed; top: 0; width: 100%; height: var(--header-height); 
+        background: rgba(248, 246, 243, 0.95); z-index: 1000; 
+    }
+    .hero { 
+        position: relative; height: 100vh; display: flex; 
+        align-items: center; background: #121212; overflow: hidden; 
+    }
+    .hero__bg { 
+        position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+        object-fit: cover; z-index: -1; opacity: 0.6; 
+    }
     </style>
 
     <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet" display="swap">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body data-reveal-container>
     <a href="#main-content" class="skip-link">Skip to main content</a>
