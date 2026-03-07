@@ -1,27 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
-    
-    // 1. Enhanced Mobile Navigation
+    // 1. Mobile Menu Toggle
     const menuBtn = document.getElementById("mobile-menu");
     const nav = document.getElementById("nav-menu");
-    const body = document.body;
-
-    const toggleMenu = () => {
-        const isOpen = nav.classList.toggle("nav--open");
-        menuBtn.classList.toggle("active"); // Animates the burger to X
-        menuBtn.setAttribute("aria-expanded", isOpen);
-        body.style.overflow = isOpen ? "hidden" : ""; 
-    };
-
-    menuBtn.addEventListener("click", toggleMenu);
-
-    // Close menu when link is clicked
-    document.querySelectorAll(".nav__link").forEach(link => {
-        link.addEventListener("click", () => {
-            if (nav.classList.contains("nav--open")) toggleMenu();
+    
+    if(menuBtn) {
+        menuBtn.addEventListener("click", () => {
+            const isOpen = nav.classList.toggle("nav--open");
+            menuBtn.classList.toggle("active");
+            menuBtn.setAttribute("aria-expanded", isOpen);
         });
-    });
+    }
 
-    // 2. Performance-Optimized Scroll Reveal
+    // 2. Intersection Observer for Performance
     const revealCallback = (entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -31,37 +21,30 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
-    const revealObserver = new IntersectionObserver(revealCallback, {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px"
+    const observer = new IntersectionObserver(revealCallback, {
+        threshold: 0.1
     });
 
-    document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 
-    // 3. Form Validation & UX
+    // 3. Form Handling
     const form = document.getElementById("reservation-form");
     const formMsg = document.getElementById("form-message");
 
-    form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const btn = form.querySelector('button');
-        const btnText = btn.querySelector('.btn__text');
+    if(form) {
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const btn = form.querySelector('button');
+            btn.disabled = true;
+            btn.innerText = "Checking...";
 
-        btn.disabled = true;
-        btnText.textContent = "Processing...";
-
-        // Simulate professional API response
-        setTimeout(() => {
-            btnText.textContent = "Reservation Sent";
-            formMsg.textContent = "Thank you. Our concierge will contact you within 15 minutes.";
-            formMsg.classList.remove('hidden');
-            form.reset();
-            
             setTimeout(() => {
+                formMsg.textContent = "Thank you! Our concierge will contact you shortly.";
+                formMsg.classList.remove('hidden');
+                form.reset();
                 btn.disabled = false;
-                btnText.textContent = "Check Availability";
-                formMsg.classList.add('hidden');
-            }, 5000);
-        }, 1800);
-    });
+                btn.innerText = "Check Availability";
+            }, 1500);
+        });
+    }
 });
