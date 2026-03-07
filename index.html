@@ -96,14 +96,15 @@
         <div class="container grid-2">
           <div class="reveal">
             <div class="about__img-wrapper">
-              <img
-                src="images/chefcooking.webp"
-                alt="Executive Chef preparing a signature gourmet dish"
-                class="about__img"
-                loading="lazy"
-                width="600"
-                height="400"
-              />
+              <img 
+              src="images/chefcooking.webp" 
+              srcset="images/chefcooking-small.webp 600w, images/chefcooking.webp 1200w"
+              sizes="(max-width: 600px) 100vw, 600px"
+              alt="Executive Chef preparing a signature gourmet dish" 
+              class="about__img" 
+              loading="lazy" 
+              width="600" 
+            height="400">
               <div class="about__badge">EST. 2026</div>
             </div>
           </div>
