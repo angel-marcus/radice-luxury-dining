@@ -73,9 +73,15 @@ body {
 
 /* Hero */
 .hero {
-    height: calc(100vh - var(--header-height));
-    background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('images/hero.webp') center/cover no-repeat;
-    display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white);
+    height: 100vh;
+    /* Use the direct path so it matches the preload in the HTML */
+    background: linear-gradient(rgba(18, 18, 18, 0.6), rgba(18, 18, 18, 0.6)), url('images/hero.webp') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    position: relative;
 }
 .hero__tagline { display: block; letter-spacing: 6px; font-size: 10px; font-weight: 700; margin-bottom: 20px; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
 .hero__title { font-family: 'Playfair Display', serif; font-size: clamp(45px, 8vw, 85px); line-height: 1.1; margin-bottom: 15px; }
