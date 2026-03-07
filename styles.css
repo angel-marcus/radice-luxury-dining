@@ -1,6 +1,6 @@
 :root {
-    --gold: #b38b59;
-    --gold-dark: #8c6a42;
+    --gold: #9c7543; 
+    --gold-dark: #7a5c35;
     --dark: #121212;
     --white: #ffffff;
     --cream: #f8f6f3;
@@ -56,6 +56,8 @@ body {
     font-weight: 700; text-transform: uppercase; letter-spacing: 2px; transition: var(--transition-smooth);
     text-decoration: none; font-size: 11px; position: relative;
     will-change: transform, background-color;
+    font-size: 14px; /* Increased from 11px */
+    padding: 20px 45px; /* Slightly larger padding */
 }
 
 .btn--primary { background: var(--dark); color: white; border-color: var(--dark); }
@@ -74,7 +76,7 @@ body {
 /* Hero */
 .hero {
     height: calc(100vh - var(--header-height));
-    background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('images/hero.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), center/cover no-repeat;
     display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white);
 }
 .hero__tagline { display: block; letter-spacing: 6px; font-size: 10px; font-weight: 700; margin-bottom: 20px; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
@@ -131,10 +133,29 @@ body {
     }
     .nav--open { right: 0; }
     .nav__list { flex-direction: column; text-align: center; gap: 35px; }
-    .nav__link { font-size: 22px; letter-spacing: 4px; }
+    .nav__link { 
+    text-decoration: none; color: var(--dark); 
+    font-size: 14px; /* Increased from 11px */
+    font-weight: 700; 
+    text-transform: uppercase; letter-spacing: 2px; transition: 0.3s;
+    padding: 12px 0; /* Larger tap target */
+    display: inline-block;
+    }
 
     /* Cross animation for toggle */
     .menu-toggle.active .menu-toggle__bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
     .menu-toggle.active .menu-toggle__bar:nth-child(2) { opacity: 0; }
     .menu-toggle.active .menu-toggle__bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+}
+
+/* ACCESSIBILITY: Screen Reader Only (Visually Hidden) */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
 }
