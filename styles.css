@@ -73,28 +73,30 @@ body {
 .btn--link .arrow { transition: transform 0.3s ease; display: inline-block; }
 .btn--link:hover .arrow { transform: translateX(6px); }
 
-/* Hero */
-/* Hero */
+/* Hero Section Layout */
 .hero {
-    position: relative; /* CRITICAL: Keeps the absolute background inside this section */
-    height: calc(100vh - var(--header-height));
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    text-align: center; 
-    color: var(--white); 
-    overflow: hidden; /* CRITICAL: Prevents the image from bleeding into the next section */
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: var(--dark);
 }
 
-/* NEW: Styles the HTML image to act like a background */
 .hero__bg {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    z-index: -2;
+    object-fit: cover; /* This makes the image fill the screen without stretching */
+    z-index: 1;
+}
+
+.hero__content {
+    position: relative;
+    z-index: 2; /* Ensures text stays on top of the image */
+    color: var(--white);
+    text-align: center;
 }
 
 /* NEW: Recreates the dark gradient overlay so your text is readable */
@@ -109,11 +111,6 @@ body {
     z-index: -1;
 }
 
-/* NEW: Pulls the text above the dark overlay */
-.hero__content {
-    position: relative;
-    z-index: 1;
-}
 .hero__tagline { display: block; letter-spacing: 6px; font-size: 10px; font-weight: 700; margin-bottom: 20px; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
 .hero__title { font-family: 'Playfair Display', serif; font-size: clamp(45px, 8vw, 85px); line-height: 1.1; margin-bottom: 15px; }
 .hero__title em {
