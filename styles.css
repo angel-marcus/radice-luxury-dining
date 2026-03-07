@@ -111,6 +111,16 @@ body {
     z-index: -1;
 }
 
+.hero__subtitle {
+    font-family: 'Playfair Display', serif; /* Or a standard serif if not loading Google Fonts */
+    font-style: italic;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-top: 10px;
+}
+
 .hero__tagline { display: block; letter-spacing: 6px; font-size: 10px; font-weight: 700; margin-bottom: 20px; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
 .hero__title { font-family: 'Playfair Display', serif; font-size: clamp(45px, 8vw, 85px); line-height: 1.1; margin-bottom: 15px; }
 .hero__title em {
