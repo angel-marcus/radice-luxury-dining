@@ -145,3 +145,10 @@ body {
     .menu-toggle.active .menu-toggle__bar:nth-child(2) { opacity: 0; }
     .menu-toggle.active .menu-toggle__bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 }
+
+.about__img {
+    aspect-ratio: 4 / 5; /* Matches the 600x750 natural size */
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+}
