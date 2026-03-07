@@ -67,15 +67,31 @@ body {
     box-shadow: 0 12px 24px rgba(179, 139, 89, 0.25);
 }
 
-.btn--link { padding: 0; background: none; color: var(--gold); font-size: 14px; text-transform: none; border: none; }
+.btn--link { padding: 0; background: none; color: var(--gold-dark); font-size: 14px; text-transform: none; border: none; }
 .btn--link .arrow { transition: transform 0.3s ease; display: inline-block; }
 .btn--link:hover .arrow { transform: translateX(6px); }
 
 /* Hero */
 .hero {
+    position: relative;
     height: calc(100vh - var(--header-height));
-    background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('images/hero.webp') center/cover no-repeat;
-    display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    overflow: hidden;
+    background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45));
+}
+
+/* hero image element (fills the area, behind content) */
+.hero__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
 }
 .hero__tagline { display: block; letter-spacing: 6px; font-size: 10px; font-weight: 700; margin-bottom: 20px; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
 .hero__title { font-family: 'Playfair Display', serif; font-size: clamp(45px, 8vw, 85px); line-height: 1.1; margin-bottom: 15px; }
@@ -113,7 +129,7 @@ body {
 
 /* Footer */
 .footer { padding: 80px 0; text-align: center; background: var(--white); }
-.footer p { font-size: 10px; letter-spacing: 2px; margin-top: 20px; opacity: 0.5; text-transform: uppercase; }
+.footer p { font-size: 10px; letter-spacing: 2px; margin-top: 20px; color: rgba(0,0,0,0.65); text-transform: uppercase; }
 
 /* Animations */
 .reveal { opacity: 0; transform: translateY(30px); transition: var(--transition-smooth); will-change: transform, opacity; }
@@ -137,4 +153,12 @@ body {
     .menu-toggle.active .menu-toggle__bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
     .menu-toggle.active .menu-toggle__bar:nth-child(2) { opacity: 0; }
     .menu-toggle.active .menu-toggle__bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+}
+
+.sr-only {
+    position: absolute !important;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0 0 0 0);
+    white-space: nowrap; border: 0;
 }
