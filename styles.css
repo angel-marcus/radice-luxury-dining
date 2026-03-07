@@ -1,6 +1,6 @@
 :root {
-    --gold: #A67C45; 
-    --gold-dark: #846237;
+    --gold: #A67C45;       /* Darker gold for accessibility */
+    --gold-dark: #846237;  /* Deep gold for hover states */
     --dark: #121212;
     --white: #ffffff;
     --cream: #f8f6f3;
@@ -119,12 +119,11 @@ body {
 .hero__title em {
     display: block;
     font-style: normal;
-    color: var(--gold); /* This will now be the darker, professional gold */
+    color: var(--gold);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Adds a subtle shadow so gold pops against images */
     font-family: 'Playfair Display', serif;
     font-size: 1.2em;
-    line-height: 1.2;
 }
-
 /* About & Sections */
 .about__img-wrapper { position: relative; }
 .about__img { width: 100%; height: auto; box-shadow: 0 30px 60px rgba(0,0,0,0.08); }
