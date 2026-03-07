@@ -13,9 +13,9 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { 
-    background: var(--cream); 
+    background-color: var(--cream); 
     color: var(--dark); 
-    font-family: 'Montserrat', sans-serif; 
+    font-family: 'Montserrat', sans-serif; /* Make sure this matches the Google Font name exactly */
     line-height: 1.8; 
     padding-top: var(--header-height);
     overflow-x: hidden;
