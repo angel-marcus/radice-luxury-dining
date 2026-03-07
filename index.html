@@ -7,44 +7,26 @@
     <title>RADICE | Artisan Dining & Culinary Excellence</title>
 
     <link rel="canonical" href="https://radice-luxury-dining.vercel.app" />
-    <meta name="description" content="Experience artisan flavors at Radice. High-end dining interface built for performance and luxury hospitality." />
+    <meta name="description" content="Experience artisan flavors at Radice. High-performance luxury hospitality interface." />
     
     <link rel="preload" as="image" href="images/hero.webp" fetchpriority="high">
     <link rel="icon" href="images/favicon.ico" />
     
+    <style>
+        :root { --gold: #A67C45; --dark: #121212; --white: #ffffff; --cream: #f8f6f3; --header-height: 80px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--cream); color: var(--dark); font-family: sans-serif; padding-top: var(--header-height); overflow-x: hidden; }
+        .container { width: 92%; max-width: 1200px; margin: auto; }
+        .hero { position: relative; height: 100vh; display: flex; align-items: center; background: #121212; overflow: hidden; }
+        .hero__bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; opacity: 0.6; }
+        .header { position: fixed; top: 0; width: 100%; height: var(--header-height); background: rgba(248, 246, 243, 0.95); z-index: 1000; }
+    </style>
+
+    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" media="print" onload="this.media='all'" />
-    <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" />
-    </noscript>
-
-    <link rel="stylesheet" href="styles.css" />
-
-    <style>
-        :root { --dark: #121212; --white: #ffffff; --gold: #A67C45; --cream: #f8f6f3; }
-        body { background: var(--cream); margin: 0; font-family: sans-serif; color: var(--dark); }
-        /* Hero Visibility Fix */
-        .hero { 
-            position: relative;
-            min-height: 100vh; 
-            background: var(--dark); 
-            display: flex; 
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-        .hero__bg {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            object-fit: cover;
-            opacity: 0.6;
-        }
-        .hero__content { position: relative; z-index: 2; text-align: center; color: var(--white); }
-    </style>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet" display="swap">
 </head>
 <body data-reveal-container>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -88,12 +70,7 @@
 
     <main id="main-content">
      <section id="home" class="hero">
-            <img src="images/hero.webp" 
-            alt="Luxury dining room atmosphere" 
-            class="hero__bg" 
-            fetchpriority="high" 
-            width="1920" 
-            height="1080">
+            <img src="images/hero.webp" alt="Luxury dining room atmosphere" class="hero__bg" fetchpriority="high" width="1920" height="1080">
             <div class="container hero__content">
                 <div class="reveal">
                     <p class="hero__subtitle">Experience the soul of modern Mediterranean cuisine.</p>
@@ -236,6 +213,6 @@
         <p>&copy; 2026 Radice International. Pure Taste. Soulful Experience.</p>
       </div>
     </footer>
-
+     <script src="script.js" defer></script>
   </body>
 </html>
