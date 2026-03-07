@@ -173,7 +173,16 @@ body {
 }
 
 /* Animations */
-.reveal { opacity: 0; transform: translateY(30px); transition: var(--transition-smooth); will-change: transform, opacity; }
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    will-change: transform, opacity;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
 .active { opacity: 1; transform: translateY(0); }
 
 /* MOBILE REFINEMENT */
