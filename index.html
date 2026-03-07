@@ -1,255 +1,168 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#121212" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#121212">
     <title>RADICE | Artisan Dining & Culinary Excellence</title>
-
-    <meta
-      name="description"
-      content="Experience artisan flavors at Radice. High-end dining interface built for performance and luxury hospitality."
-    />
-    <meta property="og:title" content="Radice | Artisan Dining" />
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:url"
-      content="https://lumiere-deployment-v1.vercel.app/"
-    />
-    <meta property="og:image" content="images/hero-preview.jpg" />
+    
+    <meta name="description" content="Experience artisan flavors at Radice. High-end dining interface built for performance and luxury hospitality.">
+    <meta property="og:title" content="Radice | Artisan Dining">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lumiere-deployment-v1.vercel.app/">
+    <meta property="og:image" content="images/hero-preview.jpg">
 
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Restaurant",
-        "name": "Radice",
-        "servesCuisine": "Artisan Modern",
-        "priceRange": "$$$",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Lahore",
-          "addressCountry": "PK"
-        }
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Radice",
+      "servesCuisine": "Artisan Modern",
+      "priceRange": "$$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lahore",
+        "addressCountry": "PK"
       }
+    }
     </script>
 
-    <link rel="icon" href="images/favicon.ico" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-    <link
-      rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
-      media="print"
-      onload="this.media = 'all'"
-    />
-
-    <link rel="stylesheet" href="styles.css" />
-
-    <link
-      rel="preload"
-      as="image"
-      href="images/hero.webp"
-      fetchpriority="high"
-    />
-  </head>
-  <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <header class="header" role="banner">
-      <div class="container header__wrapper">
-        <a href="#home" class="logo" aria-label="Radice Home"
-          >RADICE<span>.</span></a
-        >
+        <div class="container header__wrapper">
+            <a href="#home" class="logo" aria-label="Radice Home">RADICE<span>.</span></a>
+            
+            <button class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+                <span class="menu-toggle__bar"></span>
+                <span class="menu-toggle__bar"></span>
+                <span class="menu-toggle__bar"></span>
+            </button>
 
-        <button
-          class="menu-toggle"
-          id="mobile-menu"
-          aria-label="Toggle navigation"
-          aria-expanded="false"
-          aria-controls="nav-menu"
-        >
-          <span class="menu-toggle__bar"></span>
-          <span class="menu-toggle__bar"></span>
-          <span class="menu-toggle__bar"></span>
-        </button>
-
-        <nav class="nav" id="nav-menu">
-          <ul class="nav__list">
-            <li class="nav__item">
-              <a href="#home" class="nav__link">Home</a>
-            </li>
-            <li class="nav__item">
-              <a href="#about" class="nav__link">Story</a>
-            </li>
-            <li class="nav__item">
-              <a href="#menu" class="nav__link">Menu</a>
-            </li>
-            <li class="nav__item">
-              <a href="#contact" class="nav__link">Bookings</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
+            <nav class="nav" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">Story</a></li>
+                    <li class="nav__item"><a href="#menu" class="nav__link">Menu</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">Bookings</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main id="main-content">
-      <section id="home" class="hero" aria-label="Hero Banner">
-        <div class="hero__overlay"></div>
-        <img
-          src="images/hero.webp"
-          alt="Luxury fine dining table setting"
-          class="hero__img"
-          fetchpriority="high"
-        />
-        <div class="container hero__content reveal">
-          <p class="hero__subtitle">An Artisan Culinary Ritual</p>
-          <h1 class="hero__title">
-            Artisan Flavors<br /><span>Refined Experience</span>
-          </h1>
-          <div class="hero__actions">
-            <a href="#menu" class="btn btn--primary">Explore Menu</a>
-          </div>
-        </div>
-      </section>
-
-      <section id="about" class="section about">
-        <div class="container grid-2">
-          <div class="reveal">
-            <div class="about__img-wrapper">
-              <img
-                src="images/chefcooking.webp"
-                alt="Executive Chef preparing a signature gourmet dish"
-                class="about__img"
-                loading="lazy"
-                width="600"
-                height="750"
-              />
-              <div class="about__badge">EST. 2026</div>
+        <section id="home" class="hero" aria-label="Hero Banner">
+            <div class="hero__content reveal">
+                <span class="hero__tagline">AN ARTISAN CULINARY RITUAL</span>
+                <h1 class="hero__title">Artisan Flavors <br><em>Refined Experience</em></h1>
+                <div class="hero__actions">
+                    <a href="#menu" class="btn btn--primary">Explore Menu</a>
+                </div>
             </div>
-          </div>
-          <div class="reveal">
-            <span class="section__accent">Our Philosophy</span>
-            <h2 class="section__title">Crafted with Precision</h2>
-            <p class="section__text">
-              Radice combines traditional artisan techniques with modern
-              culinary soul. Every plate is a balanced ritual of organic
-              textures and hand-picked local ingredients.
-            </p>
-            <a href="#contact" class="btn btn--link"
-              >Plan Your Visit <span class="arrow">→</span></a
-            >
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="menu" class="section section--white">
-        <div class="container">
-          <h2 class="section__title center reveal">Signature Selection</h2>
-          <div class="menu-grid">
-            <article class="menu-item reveal">
-              <div class="menu-item__img-box">
-                <img
-                  src="images/pizza.webp"
-                  alt="Classic Margherita Pizza"
-                  loading="lazy"
-                />
-              </div>
-              <div class="menu-item__info">
-                <div class="menu-item__header">
-                  <h3>Margherita Pizza</h3>
-                  <span class="price">$18</span>
+        <section id="about" class="section about">
+            <div class="container grid-2">
+                <div class="reveal">
+                    <div class="about__img-wrapper">
+                        <img src="images/chefcooking.jpg" alt="Executive Chef preparing a signature gourmet dish" class="about__img" loading="lazy">
+                        <div class="about__badge">EST. 2026</div>
+                    </div>
                 </div>
-                <p>Buffalo mozzarella, heritage tomato, fresh basil.</p>
-              </div>
-            </article>
-
-            <article class="menu-item reveal">
-              <div class="menu-item__img-box">
-                <img
-                  src="images/steak.webp"
-                  alt="Grilled Wagyu Steak"
-                  loading="lazy"
-                />
-              </div>
-              <div class="menu-item__info">
-                <div class="menu-item__header">
-                  <h3>Grilled Steak</h3>
-                  <span class="price">$45</span>
+                <div class="reveal">
+                    <span class="section__accent">Our Philosophy</span>
+                    <h2 class="section__title">Crafted with Precision</h2>
+                    <p class="section__text">
+                        Radice combines traditional artisan techniques with modern culinary soul. 
+                        Every plate is a balanced ritual of organic textures and hand-picked local ingredients.
+                    </p>
+                    <a href="#contact" class="btn btn--link">Plan Your Visit <span class="arrow">→</span></a>
                 </div>
-                <p>Prime aged ribeye, rosemary and sea salt butter.</p>
-              </div>
-            </article>
+            </div>
+        </section>
 
-            <article class="menu-item reveal">
-              <div class="menu-item__img-box">
-                <img
-                  src="images/pasta.webp"
-                  alt="Hand-pulled Spaghetti"
-                  loading="lazy"
-                />
-              </div>
-              <div class="menu-item__info">
-                <div class="menu-item__header">
-                  <h3>Spaghetti Pasta</h3>
-                  <span class="price">$24</span>
+        <section id="menu" class="section section--white">
+            <div class="container">
+                <h2 class="section__title center reveal">Signature Selection</h2>
+                <div class="menu-grid">
+                    <article class="menu-item reveal">
+                        <div class="menu-item__img-box">
+                            <img src="images/pizza.jpg" alt="Classic Margherita Pizza" loading="lazy">
+                        </div>
+                        <div class="menu-item__info">
+                            <div class="menu-item__header">
+                                <h3>Margherita Pizza</h3>
+                                <span class="price">$18</span>
+                            </div>
+                            <p>Buffalo mozzarella, heritage tomato, fresh basil.</p>
+                        </div>
+                    </article>
+
+                    <article class="menu-item reveal">
+                        <div class="menu-item__img-box">
+                            <img src="images/steak.jpg" alt="Grilled Wagyu Steak" loading="lazy">
+                        </div>
+                        <div class="menu-item__info">
+                            <div class="menu-item__header">
+                                <h3>Grilled Steak</h3>
+                                <span class="price">$45</span>
+                            </div>
+                            <p>Prime aged ribeye, rosemary and sea salt butter.</p>
+                        </div>
+                    </article>
+
+                    <article class="menu-item reveal">
+                        <div class="menu-item__img-box">
+                            <img src="images/pasta.jpg" alt="Hand-pulled Spaghetti" loading="lazy">
+                        </div>
+                        <div class="menu-item__info">
+                            <div class="menu-item__header">
+                                <h3>Spaghetti Pasta</h3>
+                                <span class="price">$24</span>
+                            </div>
+                            <p>Hand-pulled pasta, creamy garlic parmesan sauce.</p>
+                        </div>
+                    </article>
                 </div>
-                <p>Hand-pulled pasta, creamy garlic parmesan sauce.</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
+            </div>
+        </section>
 
-      <section id="contact" class="section contact">
-        <div class="container">
-          <div class="contact__box reveal">
-            <h2 class="section__title white">Reserve a Table</h2>
-            <form id="reservation-form" class="reserve-form">
-              <div class="form-group">
-                <input
-                  type="text"
-                  id="name"
-                  placeholder="Full Name"
-                  required
-                  aria-required="true"
-                />
-              </div>
-              <div class="form-group">
-                <input
-                  type="email"
-                  id="email"
-                  placeholder="Email Address"
-                  required
-                  aria-required="true"
-                />
-              </div>
-              <button type="submit" class="btn btn--primary btn--full">
-                <span class="btn__text">Check Availability</span>
-              </button>
-            </form>
-            <div
-              id="form-message"
-              class="form-message hidden"
-              aria-live="polite"
-            ></div>
-          </div>
-        </div>
-      </section>
+        <section id="contact" class="section contact">
+            <div class="container">
+                <div class="contact__box reveal">
+                    <h2 class="section__title white">Reserve a Table</h2>
+                    <form id="reservation-form" class="reserve-form">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Full Name" required aria-required="true">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Email Address" required aria-required="true">
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--full">
+                            <span class="btn__text">Check Availability</span>
+                        </button>
+                    </form>
+                    <div id="form-message" class="form-message hidden" aria-live="polite"></div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
-      <div class="container">
-        <div class="logo logo--small">RADICE<span>.</span></div>
-        <p>&copy; 2026 Radice International. Pure Taste. Soulful Experience.</p>
-      </div>
+        <div class="container">
+            <div class="logo logo--small">RADICE<span>.</span></div>
+            <p>&copy; 2026 Radice International. Pure Taste. Soulful Experience.</p>
+        </div>
     </footer>
 
     <script src="script.js" defer></script>
-  </body>
+</body>
 </html>
