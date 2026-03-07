@@ -116,7 +116,11 @@ body {
 }
 .hero__tagline { display: block; letter-spacing: 6px; font-size: 10px; font-weight: 700; margin-bottom: 20px; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
 .hero__title { font-family: 'Playfair Display', serif; font-size: clamp(45px, 8vw, 85px); line-height: 1.1; margin-bottom: 15px; }
-.hero__title em { color: var(--gold); font-style: italic; font-weight: 400; }
+.hero__title em { 
+    color: var(--white); /* Changed from var(--gold) to white for better visibility */
+    font-style: italic; 
+    font-weight: 400; 
+}
 
 /* About & Sections */
 .about__img-wrapper { position: relative; }
