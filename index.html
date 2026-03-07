@@ -12,41 +12,34 @@
     <link rel="preload" as="image" href="images/hero.webp" fetchpriority="high">
     <link rel="icon" href="images/favicon.ico" />
     
-    <style>
-    /* 1. ESSENTIAL VARIABLES & RESET */
-    :root { --gold: #A67C45; --dark: #121212; --white: #ffffff; --cream: #f8f6f3; --header-height: 80px; }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    
-    /* 2. PREVENT FLASH: Force background and font immediately */
-    html, body { 
-        background-color: var(--cream); 
-        color: var(--dark); 
-        font-family: 'Montserrat', sans-serif; 
-        padding-top: var(--header-height);
-        overflow-x: hidden;
-    }
-
-    /* 3. HERO & HEADER LAYOUT */
-    .container { width: 92%; max-width: 1200px; margin: auto; }
-    .header { 
-        position: fixed; top: 0; width: 100%; height: var(--header-height); 
-        background: rgba(248, 246, 243, 0.95); z-index: 1000; 
-    }
-    .hero { 
-        position: relative; height: 100vh; display: flex; 
-        align-items: center; background: #121212; overflow: hidden; 
-    }
-    .hero__bg { 
-        position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-        object-fit: cover; z-index: -1; opacity: 0.6; 
-    }
-    </style>
-
-    <link rel="stylesheet" href="styles.css">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root { --gold: #A67C45; --dark: #121212; --white: #ffffff; --cream: #f8f6f3; --header-height: 80px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--cream); color: var(--dark); font-family: sans-serif; padding-top: var(--header-height); overflow-x: hidden; }
+        
+        /* Fixed Hero Height issue - ensuring it fills the viewport correctly */
+        .hero { 
+            position: relative; 
+            height: calc(100vh - var(--header-height)); 
+            min-height: 600px;
+            display: flex; 
+            align-items: center; 
+            background: #121212; 
+            overflow: hidden; 
+        }
+        .hero__bg { 
+            position: absolute; 
+            top: 0; left: 0; width: 100%; height: 100%; 
+            object-fit: cover; z-index: -1; opacity: 0.6; 
+        }
+        .header { position: fixed; top: 0; width: 100%; height: var(--header-height); background: rgba(248, 246, 243, 0.95); z-index: 1000; }
+    </style>
+
+    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 </head>
 <body data-reveal-container>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -90,7 +83,7 @@
 
     <main id="main-content">
      <section id="home" class="hero">
-            <img src="images/hero.webp" alt="Luxury dining room atmosphere" class="hero__bg" fetchpriority="high" width="1920" height="1080">
+            <img src="images/hero.webp" alt="Luxury dining room atmosphere" class="hero__bg" fetchpriority="high" decoding="async" width="1920" height="1080">
             <div class="container hero__content">
                 <div class="reveal">
                     <p class="hero__subtitle">Experience the soul of modern Mediterranean cuisine.</p>
