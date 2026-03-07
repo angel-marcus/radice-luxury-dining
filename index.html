@@ -30,7 +30,11 @@
     <link rel="icon" href="images/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap">
+    </noscript>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -59,7 +63,7 @@
     </header>
 
     <main id="main-content">
-        <section id="home" class="hero" aria-label="Hero Banner">
+        <section id="home" class="hero" aria-label="Hero Banner" fetchpriority="high">
             <div class="hero__content reveal">
                 <span class="hero__tagline">AN ARTISAN CULINARY RITUAL</span>
                 <h1 class="hero__title">Artisan Flavors <br><em>Refined Experience</em></h1>
@@ -73,7 +77,7 @@
             <div class="container grid-2">
                 <div class="reveal">
                     <div class="about__img-wrapper">
-                        <img src="images/chefcooking.webp" alt="Executive Chef preparing a signature gourmet dish" class="about__img" loading="lazy">
+                        <img src="images/chefcooking.webp" alt="Executive Chef preparing a signature gourmet dish" class="about__img" loading="lazy" width="600" height="400">
                         <div class="about__badge">EST. 2026</div>
                     </div>
                 </div>
