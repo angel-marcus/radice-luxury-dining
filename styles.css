@@ -83,6 +83,16 @@ body {
     background-color: var(--dark);
 }
 
+/* Update your general image rule to preserve space */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    /* This is the secret sauce for CLS */
+    aspect-ratio: attr(width) / attr(height); 
+}
+
+/* Specific fix for your Hero Background */
 .hero__bg {
     position: absolute;
     top: 0;
@@ -90,9 +100,8 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 1;
-    opacity: 0.4;
-    display: block; /* ADD THIS LINE */
+    /* Ensures the high-priority image doesn't shift the layout */
+    aspect-ratio: 1920 / 1080; 
 }
 
 .hero__content {
@@ -226,11 +235,6 @@ body {
     border: 0;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
 
 .btn, .nav__link {
     transition: var(--transition-smooth), background-color 0.3s ease;
