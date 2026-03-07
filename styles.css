@@ -74,7 +74,7 @@ body {
 /* Hero */
 .hero {
     height: calc(100vh - var(--header-height));
-    background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('images/hero.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('images/hero.webp') center/cover no-repeat;
     display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white);
 }
 .hero__tagline { display: block; letter-spacing: 6px; font-size: 10px; font-weight: 700; margin-bottom: 20px; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
