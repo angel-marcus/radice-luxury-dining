@@ -4,7 +4,7 @@
     --dark: #121212;
     --white: #ffffff;
     --cream: #f8f6f3;
-    --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-smooth: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.5s cubic-bezier(0.16, 1, 0.3, 1), color 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     --header-height: 80px;
 }
 
@@ -45,7 +45,7 @@ body {
 .nav__list { display: flex; list-style: none; gap: 35px; }
 .nav__link { 
     text-decoration: none; color: var(--dark); font-size: 11px; font-weight: 700; 
-    text-transform: uppercase; letter-spacing: 2px; transition: 0.3s;
+    text-transform: uppercase; letter-spacing: 2px; transition: color 0.3s ease, opacity 0.3s ease;
     position: relative;
 }
 .nav__link:hover { color: var(--gold); }
@@ -222,4 +222,10 @@ body {
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
     border: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
