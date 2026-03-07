@@ -13,8 +13,8 @@ High-performance, artisan-grade landing page built for modern culinary brands. T
 - **Intersection Observer:** Lazy-loading logic for scroll-triggered animations.
 - **Mobile-First:** Clean navigation system with scroll-lock state management.
 
-## 📈 Vercel Links
-Live Link: [https://radice-luxury-dining.vercel.app](https://radice-luxury-dining.vercel.app)
+## 📈 Netlify Deployment
+Live Link: [https://lumiere-deployment-v1.vercel.app/](https://lumiere-deployment-v1.vercel.app/)
 
 
 ### 📊 Performance Verification
@@ -22,6 +22,4 @@ Live Link: [https://radice-luxury-dining.vercel.app](https://radice-luxury-dinin
 
 
 ---
-
 *Created by Angel Marcus — Ready for High-End Web Development Inquiries.*
-

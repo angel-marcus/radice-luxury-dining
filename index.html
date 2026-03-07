@@ -1,31 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#121212" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#121212">
     <title>RADICE | Artisan Dining & Culinary Excellence</title>
+    
+    <meta name="description" content="Experience artisan flavors at Radice. High-end dining interface built for performance and luxury hospitality.">
+    <meta property="og:title" content="Radice | Artisan Dining">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lumiere-deployment-v1.vercel.app/">
+    <meta property="og:image" content="images/hero-preview.jpg">
 
-    <link rel="canonical" href="https://radice-luxury-dining.vercel.app" />
-    <meta name="description" content="Experience artisan flavors at Radice. High-performance luxury hospitality interface." />
-    
-    <link rel="preload" as="image" href="images/hero.webp" fetchpriority="high">
-    <link rel="icon" href="images/favicon.ico" />
-    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Radice",
+      "servesCuisine": "Artisan Modern",
+      "priceRange": "$$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lahore",
+        "addressCountry": "PK"
+      }
+    }
+    </script>
+
+    <link rel="icon" href="images/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Skip to content</a>
 
-    <header class="header">
-        <div class="container header__container">
-            <div class="logo">RADICE<span>.</span></div>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="header" role="banner">
+        <div class="container header__wrapper">
+            <a href="#home" class="logo" aria-label="Radice Home">RADICE<span>.</span></a>
             
-            <button class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation" aria-expanded="false">
+            <button class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
                 <span class="menu-toggle__bar"></span>
                 <span class="menu-toggle__bar"></span>
                 <span class="menu-toggle__bar"></span>
@@ -33,55 +49,102 @@
 
             <nav class="nav" id="nav-menu">
                 <ul class="nav__list">
-                    <li><a href="#about" class="nav__link">Our Story</a></li>
-                    <li><a href="#menu" class="nav__link">Artisan Menu</a></li>
-                    <li><a href="#reservation" class="nav__link">Reservations</a></li>
+                    <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">Story</a></li>
+                    <li class="nav__item"><a href="#menu" class="nav__link">Menu</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">Bookings</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main id="main-content">
-        <section class="hero">
-            <div class="hero__overlay"></div>
-            <div class="container hero__container">
-                <h1 class="hero__title reveal">The Art of <br><span class="text-gold">Pure Taste.</span></h1>
-                <p class="hero__subtitle reveal">A soulful culinary journey awaits.</p>
-                <div class="hero__actions reveal">
-                    <a href="#reservation" class="btn btn--primary">Book Experience</a>
+        <section id="home" class="hero" aria-label="Hero Banner">
+            <div class="hero__content reveal">
+                <span class="hero__tagline">AN ARTISAN CULINARY RITUAL</span>
+                <h1 class="hero__title">Artisan Flavors <br><em>Refined Experience</em></h1>
+                <div class="hero__actions">
+                    <a href="#menu" class="btn btn--primary">Explore Menu</a>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="about section">
-            <div class="container">
-                <div class="about__grid">
-                    <div class="about__content reveal">
-                        <h2 class="section__title">Crafted with <br>Passion.</h2>
-                        <p>At Radice, we believe food is the ultimate connection. Every ingredient is sourced with intention, every plate a canvas for flavor.</p>
-                        <a href="#menu" class="btn btn--outline">View Our Philosophy</a>
+        <section id="about" class="section about">
+            <div class="container grid-2">
+                <div class="reveal">
+                    <div class="about__img-wrapper">
+                        <img src="images/chefcooking.jpg" alt="Executive Chef preparing a signature gourmet dish" class="about__img" loading="lazy">
+                        <div class="about__badge">EST. 2026</div>
                     </div>
-                    <div class="about__images reveal">
-                        <img src="images/about-1.webp" alt="Artisan ingredients" class="about__img" loading="lazy">
-                        <img src="images/about-2.webp" alt="Chef plating" class="about__img" loading="lazy">
-                        <img src="images/about-3.webp" alt="Luxury dining room" class="about__img" loading="lazy">
-                    </div>
+                </div>
+                <div class="reveal">
+                    <span class="section__accent">Our Philosophy</span>
+                    <h2 class="section__title">Crafted with Precision</h2>
+                    <p class="section__text">
+                        Radice combines traditional artisan techniques with modern culinary soul. 
+                        Every plate is a balanced ritual of organic textures and hand-picked local ingredients.
+                    </p>
+                    <a href="#contact" class="btn btn--link">Plan Your Visit <span class="arrow">→</span></a>
                 </div>
             </div>
         </section>
 
-        <section id="reservation" class="reservation section">
+        <section id="menu" class="section section--white">
             <div class="container">
-                <div class="reserve-box reveal">
+                <h2 class="section__title center reveal">Signature Selection</h2>
+                <div class="menu-grid">
+                    <article class="menu-item reveal">
+                        <div class="menu-item__img-box">
+                            <img src="images/pizza.jpg" alt="Classic Margherita Pizza" loading="lazy">
+                        </div>
+                        <div class="menu-item__info">
+                            <div class="menu-item__header">
+                                <h3>Margherita Pizza</h3>
+                                <span class="price">$18</span>
+                            </div>
+                            <p>Buffalo mozzarella, heritage tomato, fresh basil.</p>
+                        </div>
+                    </article>
+
+                    <article class="menu-item reveal">
+                        <div class="menu-item__img-box">
+                            <img src="images/steak.jpg" alt="Grilled Wagyu Steak" loading="lazy">
+                        </div>
+                        <div class="menu-item__info">
+                            <div class="menu-item__header">
+                                <h3>Grilled Steak</h3>
+                                <span class="price">$45</span>
+                            </div>
+                            <p>Prime aged ribeye, rosemary and sea salt butter.</p>
+                        </div>
+                    </article>
+
+                    <article class="menu-item reveal">
+                        <div class="menu-item__img-box">
+                            <img src="images/pasta.jpg" alt="Hand-pulled Spaghetti" loading="lazy">
+                        </div>
+                        <div class="menu-item__info">
+                            <div class="menu-item__header">
+                                <h3>Spaghetti Pasta</h3>
+                                <span class="price">$24</span>
+                            </div>
+                            <p>Hand-pulled pasta, creamy garlic parmesan sauce.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact">
+            <div class="container">
+                <div class="contact__box reveal">
                     <h2 class="section__title white">Reserve a Table</h2>
                     <form id="reservation-form" class="reserve-form">
                         <div class="form-group">
-                            <label for="name" class="sr-only">Full Name</label>
-                            <input type="text" id="name" placeholder="Full Name" required aria-required="true" />
+                            <input type="text" id="name" placeholder="Full Name" required aria-required="true">
                         </div>
                         <div class="form-group">
-                            <label for="email" class="sr-only">Email Address</label>
-                            <input type="email" id="email" placeholder="Email Address" required aria-required="true" />
+                            <input type="email" id="email" placeholder="Email Address" required aria-required="true">
                         </div>
                         <button type="submit" class="btn btn--primary btn--full">
                             <span class="btn__text">Check Availability</span>
