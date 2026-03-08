@@ -1,6 +1,7 @@
 :root {
     --gold: #b38b59;
     --gold-dark: #8c6a42;
+    --gold-text: #6b4c20; /* Added for WCAG text contrast compliance */
     --dark: #121212;
     --white: #ffffff;
     --cream: #f8f6f3;
@@ -118,7 +119,7 @@ body {
     padding: 25px 15px; font-weight: 700; font-size: 10px; writing-mode: vertical-rl;
     box-shadow: 8px 8px 0 var(--gold);
 }
-.section__accent { color: var(--gold); text-transform: uppercase; letter-spacing: 4px; font-weight: 700; font-size: 10px; }
+.section__accent { display: block; font-size: 14px; letter-spacing: 4px; color: var(--gold-text); margin-bottom: 20px; font-weight: 600; text-transform: uppercase; }
 .section__title { font-family: 'Playfair Display', serif; font-size: clamp(35px, 5vw, 55px); margin: 15px 0 25px; line-height: 1.2; }
 .section__title.white { color: white; }
 
@@ -128,7 +129,7 @@ body {
 .menu-item__img-box img { width: 100%; height: 100%; object-fit: cover; transition: 1.5s cubic-bezier(0.16, 1, 0.3, 1); }
 .menu-item:hover img { transform: scale(1.1); }
 .menu-item h3 { font-family: 'Playfair Display', serif; font-size: 24px; }
-.price { color: var(--gold); font-weight: 700; letter-spacing: 1px; }
+.price { color: var(--gold-text); font-size: 20px; font-weight: 600; }
 
 /* Contact Form */
 .contact { background: var(--dark); color: white; text-align: center; }
