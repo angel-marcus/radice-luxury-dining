@@ -99,7 +99,20 @@ body {
 
 /* About & Sections */
 .about__img-wrapper { position: relative; }
-.about__img { width: 100%; box-shadow: 0 30px 60px rgba(0,0,0,0.08); }
+.about__img {
+    width: 100%;
+    height: auto;
+    /* This matches the 600x750 attributes exactly */
+    aspect-ratio: 600 / 750; 
+    object-fit: cover;
+    display: block;
+    border-radius: 4px; /* Optional: matches luxury aesthetic */
+}
+.about__image-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
 .about__badge {
     position: absolute; top: -15px; right: -15px; background: var(--dark); color: white;
     padding: 25px 15px; font-weight: 700; font-size: 10px; writing-mode: vertical-rl;

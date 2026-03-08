@@ -1,67 +1,67 @@
 document.addEventListener("DOMContentLoaded", () => {
-    
-    // 1. Enhanced Mobile Navigation
+    // 1. Mobile Navigation
     const menuBtn = document.getElementById("mobile-menu");
     const nav = document.getElementById("nav-menu");
     const body = document.body;
 
-    const toggleMenu = () => {
-        const isOpen = nav.classList.toggle("nav--open");
-        menuBtn.classList.toggle("active"); // Animates the burger to X
-        menuBtn.setAttribute("aria-expanded", isOpen);
-        body.style.overflow = isOpen ? "hidden" : ""; 
-    };
+    if (menuBtn && nav) {
+        menuBtn.addEventListener("click", () => {
+            const isOpen = nav.classList.toggle("nav--open");
+            menuBtn.classList.toggle("active");
+            menuBtn.setAttribute("aria-expanded", isOpen);
+            body.style.overflow = isOpen ? "hidden" : "";
+        });
+    }
 
-    menuBtn.addEventListener("click", toggleMenu);
-
-    // Close menu when link is clicked
+    // Close menu when a link is clicked
     document.querySelectorAll(".nav__link").forEach(link => {
         link.addEventListener("click", () => {
-            if (nav.classList.contains("nav--open")) toggleMenu();
+            if (nav.classList.contains("nav--open")) {
+                nav.classList.remove("nav--open");
+                menuBtn.classList.remove("active");
+                menuBtn.setAttribute("aria-expanded", "false");
+                body.style.overflow = "";
+            }
         });
     });
 
-    // 2. Performance-Optimized Scroll Reveal
-    const revealCallback = (entries, observer) => {
+    // 2. Form Handling
+    const form = document.getElementById("reservation-form");
+    const formMsg = document.getElementById("form-message");
+    const submitBtn = document.getElementById("submit-btn");
+
+    if (form) {
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const btnText = submitBtn.querySelector(".btn__text");
+            
+            submitBtn.disabled = true;
+            btnText.textContent = "Processing...";
+
+            setTimeout(() => {
+                form.reset();
+                btnText.textContent = "Reservation Sent";
+                formMsg.textContent = "Thank you. Our concierge will contact you shortly.";
+                formMsg.classList.remove("hidden");
+                
+                setTimeout(() => {
+                    submitBtn.disabled = false;
+                    btnText.textContent = "Check Availability";
+                    formMsg.classList.add("hidden");
+                }, 4000);
+            }, 1500);
+        });
+    }
+
+    // 3. Scroll Reveal
+    const observerOptions = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add("active");
-                observer.unobserve(entry.target);
             }
         });
-    };
+    }, observerOptions);
 
-    const revealObserver = new IntersectionObserver(revealCallback, {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px"
-    });
-
-    document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
-
-    // 3. Form Validation & UX
-    const form = document.getElementById("reservation-form");
-    const formMsg = document.getElementById("form-message");
-
-    form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const btn = form.querySelector('button');
-        const btnText = btn.querySelector('.btn__text');
-
-        btn.disabled = true;
-        btnText.textContent = "Processing...";
-
-        // Simulate professional API response
-        setTimeout(() => {
-            btnText.textContent = "Reservation Sent";
-            formMsg.textContent = "Thank you. Our concierge will contact you within 15 minutes.";
-            formMsg.classList.remove('hidden');
-            form.reset();
-            
-            setTimeout(() => {
-                btn.disabled = false;
-                btnText.textContent = "Check Availability";
-                formMsg.classList.add('hidden');
-            }, 5000);
-        }, 1800);
-    });
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 });
