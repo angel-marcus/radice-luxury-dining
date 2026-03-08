@@ -182,3 +182,15 @@ body {
     transform: none !important;
     visibility: visible !important;
 }
+
+/* Performance Overrides */
+#home.hero {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+}
+
+#home .hero__content {
+    opacity: 1 !important;
+    transform: none !important;
+}
