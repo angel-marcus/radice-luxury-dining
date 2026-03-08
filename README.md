@@ -18,7 +18,7 @@ Live Link: [https://radice-luxury-dining.vercel.app/](https://radice-luxury-dini
 
 
 ### 📊 Performance Verification
-![Lighthouse Score](images/radice_lighthouse_score.png)
+![Lighthouse Score](images/radice_lighthouse_screenshot.png)
 
 
 ---
