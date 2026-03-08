@@ -14,7 +14,7 @@ High-performance, artisan-grade landing page built for modern culinary brands. T
 - **Mobile-First:** Clean navigation system with scroll-lock state management.
 
 ## 📈 Netlify Deployment
-Live Link: [https://lumiere-deployment-v1.vercel.app/](https://lumiere-deployment-v1.vercel.app/)
+Live Link: [https://radice-luxury-dining.vercel.app/](https://radice-luxury-dining.vercel.app/)
 
 
 ### 📊 Performance Verification
