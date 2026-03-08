@@ -14,7 +14,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://radice-luxury-dining.vercel.app/" />
     <meta property="og:image" content="images/hero-preview.jpg" />
-
+    <link rel="preload" as="image" href="images/hero.webp" fetchpriority="high" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -90,19 +90,16 @@
 
     <main id="main-content">
       <section id="home" class="hero">
-        <!-- LCP-friendly hero image (explicit width/height, high priority) -->
         <img 
-         src="images/hero.webp" 
-         srcset="images/hero-mobile.webp 600w, images/hero.webp 1920w"
-         sizes="100vw"
-         alt="" 
-         aria-hidden="true" 
-         class="hero__image" 
-         loading="eager" 
-         fetchpriority="high" 
-         decoding="sync" 
-         width="1920" 
-         height="1080" 
+        src="images/hero.webp" 
+        alt="" 
+        aria-hidden="true" 
+        class="hero__image" 
+        loading="eager" 
+        fetchpriority="high" 
+        decoding="sync" 
+        width="1920" 
+        height="1080" 
         />
 
         <div class="hero__content reveal">
