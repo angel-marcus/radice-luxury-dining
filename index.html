@@ -45,8 +45,6 @@
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
-      media="print"
-      onload="this.media = 'all'"
     />
 
     <noscript>
@@ -68,7 +66,12 @@
           >RADICE<span>.</span></a
         >
 
-        <button id="mobile-menu-btn">Menu</button>
+        <button
+          id="mobile-menu"
+          class="menu-toggle"
+          aria-label="Open Menu"
+          aria-expanded="false"
+        >
           <span class="menu-toggle__bar"></span>
           <span class="menu-toggle__bar"></span>
           <span class="menu-toggle__bar"></span>
