@@ -1,4 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // Fix CSP Violation: Safely load Google Fonts asynchronously
+    const fontLink = document.getElementById("google-fonts");
+    if (fontLink) {
+        fontLink.media = "all";
+    }
     // 1. Mobile Menu Logic (Fixed CSP Violation)
     const menuBtn = document.getElementById("mobile-menu");
     const nav = document.getElementById("nav-menu");
